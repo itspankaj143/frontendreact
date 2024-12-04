@@ -1,0 +1,237 @@
+.search-filter-container {
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 16px;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.search-container {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 350px;
+  border-radius: 4px;
+  padding-left: 24px;
+  background-color: var(--elements-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  padding: 16px;
+  width: 100%;
+  background-color: inherit;
+  color: inherit;
+}
+
+.search-container input::placeholder {
+  color: #999;
+}
+
+.filter-by-region {
+  width: 250px;
+  padding: 16px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: var(--elements-color);
+  color: var(--text-color);
+}
+.filter-by-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-by-category label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.filter-by-category input[type="checkbox"] {
+  accent-color: blue; /* For modern browsers, provides a custom color for the checkbox */
+}
+
+.price-slider {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-slider label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.price-slider input[type="range"] {
+  width: 100%; /* Makes the slider take full width of its container */
+  cursor: pointer;
+}
+
+/* Adding responsiveness for better mobile and tablet viewing */
+@media (min-width: 768px) {
+  .search-filter-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-container,
+  .filter-by-category,
+  .price-slider {
+    flex: 1;
+  }
+
+  .search-container {
+    max-width: 300px; /* Limits the search input size on larger screens */
+  }
+}
+.product-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.product-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-card:hover .product-img {
+  opacity: 0.8;
+}
+
+.product-description {
+  min-height: 70px; /* Ensure consistent card height regardless of description length */
+  /* border: 1px solid red; */
+}
+.img-fluid {
+  max-width: 100%;
+  height: 10rem;
+  border: 1px solid red;
+}
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.product-price {
+  font-size: 1.2em;
+  color: #004085;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.search-input,
+.category-select {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus,
+.category-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-input {
+  /* flex-grow: 1; */
+  width: 20%;
+}
+
+.category-select {
+  min-width: 200px;
+}
+::placeholder {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+/* Optional: add a submit button if needed */
+.search-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.category-select {
+  padding: 10px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M6%209L1.5%204.5L10.5%204.5Z%22%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 12px;
+}
+
+.category-select:hover {
+  border-color: #007bff;
+}
+
+.category-select:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* For the wrapper element, if any */
+.select-wrapper {
+  position: relative;
+}
+
+/* Adding a custom arrow */
+.select-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #666;
+  pointer-events: none;
+}
